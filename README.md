@@ -1,6 +1,6 @@
 # ESP32 IDF TCP library
-All functions have comments and are inspired in the Arduino Core.
-WiFi Library used: [WiFi](https://github.com/urbanze/esp32-wifi)
+All functions have comments and are inspired in the Arduino Core. WiFi Library used: [WiFi](https://github.com/urbanze/esp32-wifi)\
+Removing some specific lines, this library can work in any system with BSD SOCKET support.
 
 ## Simple example to connect in external server
 ```
