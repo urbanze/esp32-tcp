@@ -217,7 +217,7 @@ uint8_t TCP_CLIENT::read()
 void TCP_CLIENT::readBytes(uint8_t *bff, uint16_t size)
 {
     //memset(bff, 0, sizeof(size));
-    recv(s, bff, size-1, MSG_DONTWAIT);
+    recv(s, bff, size, MSG_DONTWAIT);
 }
 
 /**
@@ -226,7 +226,7 @@ void TCP_CLIENT::readBytes(uint8_t *bff, uint16_t size)
 void TCP_CLIENT::readBytes(char *bff, uint16_t size)
 {
     //memset(bff, 0, sizeof(size));
-    recv(s, bff, size-1, MSG_DONTWAIT);
+    recv(s, bff, size, MSG_DONTWAIT);
 }
 
 
