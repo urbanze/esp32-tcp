@@ -286,7 +286,8 @@ void TCP_SERVER::begin(uint16_t port)
  * When client connect in TCP Server, this function will return immediately and
  * return instance to use in TCP_CLIENT object (read/write/etc).
  * 
- * See "How to use in "Github example in README.md
+ * See "How to use" in Github example (README.md)
+ * Attention: This function block current task.
  * 
  * @param [timeout]: Max seconds to wait client connection.
  * 
