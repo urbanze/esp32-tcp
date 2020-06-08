@@ -200,6 +200,17 @@ int16_t TCP_CLIENT::printf(const char *format, ...)
 }
 
 /**
+ * @brief Send data over TCP connection.
+ * 
+ *  
+ * @return Data wrote.
+ */
+int16_t TCP_CLIENT::print(const char *str)
+{
+    return write((uint8_t*)str, strlen(str));
+}
+
+/**
  * @brief Read only one Byte of data available.
  * 
  * @return Data of Byte value readed.

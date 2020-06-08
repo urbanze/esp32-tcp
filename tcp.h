@@ -71,6 +71,7 @@ class TCP_CLIENT
 
 		int16_t write(uint8_t *data, uint16_t size);
 		int16_t printf(const char *format, ...);
+		int16_t print(const char *str);
 
 		uint8_t read();
 		void readBytes(uint8_t *bff, uint16_t size);
