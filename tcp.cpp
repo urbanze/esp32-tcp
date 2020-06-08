@@ -316,10 +316,11 @@ int16_t TCP_SERVER::sv(int32_t timeout)
     stv.tv_sec = timeout;
     stv.tv_usec = 0;
 
+    memset(rmt_ip, 0, sizeof(rmt_ip));
     select(max, &fds, NULL, NULL, &stv);
     if (FD_ISSET(s, &fds))
     {
-        struct sockaddr_in6 src;
+        struct sockaddr_in src;
         socklen_t src_len = sizeof(src);
 
         c = accept(s, (struct sockaddr *)&src, &src_len);
@@ -328,7 +329,17 @@ int16_t TCP_SERVER::sv(int32_t timeout)
             ESP_LOGE(tag, "Fail to accept socket connections [%d]", errno);
             close(s);
         }
+
+        inet_ntop(AF_INET, &src.sin_addr , rmt_ip, sizeof(rmt_ip));
     }
 
     return c;
+}
+
+/**
+ * @brief Get source IP from last received packet.
+ */
+char *TCP_SERVER::remoteIP()
+{
+    return rmt_ip;
 }

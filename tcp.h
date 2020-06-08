@@ -84,12 +84,15 @@ class TCP_SERVER
 	private:
 		const char tag[11] = "TCP_SERVER";
 		int s = 0;
+		char rmt_ip[16] = {0};
 
 	public:
 		~TCP_SERVER();
 
 		void begin(uint16_t port);
 		int16_t sv(int32_t timeout);
+		char *remoteIP();
+
 };
 
 
