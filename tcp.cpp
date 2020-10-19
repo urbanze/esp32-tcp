@@ -190,7 +190,7 @@ int16_t TCP_CLIENT::printf(const char *format, ...)
     va_list vl;
 
     va_start(vl, format);
-    int16_t size = vsnprintf(NULL, 0, format, vl)+1;
+    int16_t size = vsnprintf(NULL, 0, format, vl);
     va_end(vl);
 
     char bff[size] = {0};
